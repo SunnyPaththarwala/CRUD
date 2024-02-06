@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <style>
+        *{
+            background-color: #b2ad7f
+        }
+        h1,form{
+            color: #474a4e;
+            text-align: center;
+            padding: 20px;
+            border: 5ch;
+            letter-spacing: 0.1ch;            
+            font-family:"Trebuchet MS", Helvetica, sans-serif;    
+        }
+        form{ 
+            border: 2px solid black;
+            margin-top: 30px;
+            
+        }
+        button{
+            border-radius: 10px;
+            height: 45px;;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Add Book</h1> 
+    <hr><br>
+    <form action="/update/{{book.id}}", method="post", style="font-size:large">
+        {% csrf_token %}
+        Title <input type="text", name="title" , value="{{book.title}}"><br><br>
+        Price <input type="text",  name="price", value="{{book.price}}"><br><br>
+        Author: <input type="text", name="author", value="{{book.author}}"><br><br>
+        <button type="submit" style="background-color:rgba(247, 207, 46, 0.583)">Update your Book Details</button>
+       
+    </form>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        *{
+            background-color: #b2ad7f;
+            background-image: url(/b1.jpg);
+        }
+        h1{
+            color: #112f63;
+            font-family:"Trebuchet MS", Helvetica, sans-serif
+        }   
+        table{
+            width: 40%;
+            height:  auto;
+            text-align: center;
+            text-decoration: dashed;
+            font-size:large;
+        }
+        button{
+            border-radius: 10px;
+            height: 45px;;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Home Page</h1>
+    <hr> <br>
+    <center>
+    <table border="1px">
+        <caption>Book Details</caption>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td><a href="/delete/{{book.id}}">Delete</a></td> 
+            <td><a href="/update/{{book.id}}">Update</a></td>
+        </tr>
+        {% endfor %}
+   </table>
+   <br>
+
+<button style="text-align: center; font-size:large; background-color:  rgba(247, 207, 46, 0.583)">
+    <a href="/addbook">Add a new Book</a>
+</button>
+</center>
+</body>
+</html>
